@@ -32,6 +32,7 @@ module.exports = function (RED) {
 		}				
 	    };
             
+            console.log("sql2mod - start inspect dialect..")
             if (node.dialect === 'mysql') {
                 node.connection = mysqldb.createConnection(config);
             
