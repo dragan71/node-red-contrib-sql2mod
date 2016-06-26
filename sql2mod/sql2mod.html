@@ -1,4 +1,5 @@
 <script type="text/x-red" data-template-name="sql2mod">
+    
     <div class="form-row">
         <label for="node-input-mydb2"><i class="fa fa-database"></i> Database</label>
         <input type="text" id="node-input-mydb2">
@@ -15,7 +16,7 @@
         color:"#e97b00",
         defaults: {
             mydb2: {type:"SQLdatab",required:true},
-            name: {value:""}
+            name: {value:"argh"}
         },
         inputs:1,
         outputs:1,
@@ -32,13 +33,17 @@
 
 <script type="text/x-red" data-template-name="SQLdatab">
     <div class='form-row'>
-        <label for='node-config-input-dialect'><i class='fa fa-bookmark'></i> Dialect</label>
-        <select id='node-config-input-dialect'>
+        <label for='node-config-input-typeserv1'><i class='fa fa-globe'></i> Server2</label>
+        <select id='node-config-input-typeserv1'>
             <option value='mysql'>MySql</option>
             <option value='mssql'>MSSQL</option>
         </select>
     </div>
-    
+    <div class="form-row">
+        <label for="node-config-input-dialect"><i class="fa fa-globe"></i> Dialect</label>
+        <input type="text" id="node-config-input-dialect">
+    </div>
+        
     <div class="form-row">
         <label for="node-config-input-host"><i class="fa fa-globe"></i> Host</label>
         <input type="text" id="node-config-input-host">
@@ -60,7 +65,7 @@
         <input type="text" id="node-config-input-db">
     </div>
     <div class="form-row">
-        <label for="node-config-input-tz"><i class="fa fa-clock-o"></i> Timezone</label>
+        <label for="node-config-input-tz"><i class="fa fa-clock-o"></i> Timezone12</label>
         <input type="text" id="node-config-input-tz">
     </div>
 </script>
@@ -69,6 +74,8 @@
     RED.nodes.registerType('SQLdatab',{
         category: 'config',
         defaults: {
+            typeserv1: {value:"mysql",required:true},
+            dialect: {value:"mysql",required:true},
             host: {value:"127.0.0.1",required:true},
             port: {value:"",required:true},
             //user: {value:"",required:true},
